@@ -1,0 +1,27 @@
+---
+// HeroSection.astro
+import { useTranslation } from '@astro-monorepo/i18n';
+import {Image} from 'astro:assets';
+
+const lang = process.env.LANG || "en";
+const t = useTranslation(lang);
+---
+
+<section class="hero">
+  <div class="hero-image">
+    <Image src="/assets/2.png" alt="promo image" class="barilla-image" width={100} height={100} />
+  </div>
+  <div class="hero-text">
+    <p><strong>{t.general.participant_greeting}</strong></p>
+    <p>
+      {t.general.special_offer} {t.general.survey_instruction}
+    </p>
+    <br />
+    <p style="text-align: center">
+      <strong>
+        <span>{/* Могут быть стилизованные слова "Dikkat!" */}</span><br />
+        {t.general.survey_warning}
+      </strong>
+    </p>
+  </div>
+</section>

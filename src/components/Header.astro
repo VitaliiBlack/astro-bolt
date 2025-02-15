@@ -1,0 +1,27 @@
+---
+// Header.astro
+import { useTranslation } from '@astro-monorepo/i18n';
+import { Image } from 'astro:assets';
+
+const lang = process.env.LANG || "en";
+const t = useTranslation(lang); // предполагается, что язык подставляется через контекст или process.env
+---
+
+<header class="header">
+  <div class="flag_img">
+    <Image src="/assets/flag-uk.png" alt={t.general.header_delivery} width={100} height={100} />
+  </div>
+  <div class="custom_header">
+    <div class="con-head-line">
+      <hr />
+      <span>{t.general.header_form}</span>
+      <hr />
+    </div>
+    <Image src="/assets/Barilla_brand_logo.png" alt="logo" width={100} height={100} />
+    <h3>{/* Динамическая дата, например, через React компонент или Astro интеграцию */}</h3>
+  </div>
+  <div class="nav_menu_bottom">
+    <i class="fa-solid fa-truck-fast"></i>
+    <p>{t.general.header_delivery}</p>
+  </div>
+</header>

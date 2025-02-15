@@ -1,0 +1,23 @@
+---
+// PrizeSection.astro
+import { useTranslation } from '@astro-monorepo/i18n';
+import { Image } from 'astro:assets';
+
+const lang = process.env.LANG || "en";
+const t = useTranslation(lang);
+---
+
+<section class="prize-section">
+  <div class="prize-container">
+    <div class="prize-image">
+      <Image src="/assets/2.png" alt="prize image" width={100} height={100} />
+    </div>
+    <div class="prize-details">
+      <h2>{t.prize.title}</h2>
+      <p>{t.prize.description}</p>
+      <p class="prize-stock">{t.prize.stock}</p>
+      <p class="prize-price">{t.prize.price}</p>
+      <button class="prize-button">{t.prize.button}</button>
+    </div>
+  </div>
+</section>

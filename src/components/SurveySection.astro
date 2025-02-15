@@ -1,0 +1,18 @@
+---
+// SurveySection.astro
+import ReactSurvey from './ReactSurvey.jsx'; // React-компонент для вопросов
+import { useTranslation } from '@astro-monorepo/i18n';
+
+const lang = process.env.LANG || "en";
+const t = useTranslation(lang);
+---
+
+<section class="survey-section">
+  <!-- Кнопка для начала анкеты -->
+  <div class="survey-start">
+    <button class="start-button">{t.general.start_survey}</button>
+  </div>
+  
+  <!-- Место для отображения вопросов через React-компонент -->
+  <ReactSurvey questions={t.survey.questions} answers={t.survey.answers} processing={t.survey.processing} />
+</section>

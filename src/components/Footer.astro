@@ -1,0 +1,16 @@
+---
+// Footer.astro
+import { useTranslation } from '@astro-monorepo/i18n';
+const lang = process.env.LANG || "en";
+const t = useTranslation(lang);
+---
+
+<footer class="footer">
+  <div class="footer-top">
+    <p>{t.footer.promotion_validity}</p>
+    <p id="countdown" class="countdown">{t.footer.countdown}</p>
+  </div>
+  <div class="footer-bottom">
+    <p class="copyright">{t.footer.copyright}</p>
+  </div>
+</footer>
